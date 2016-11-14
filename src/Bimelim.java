@@ -8,7 +8,7 @@ import scala.Some;
 import java.util.List;
 
 /**
- * The subSetSum problem solved with dynamic programming.
+ * The Bimelim problem solved with dynamic programming.
  *
  * @author Markus Gumbel (m.gumbel@hs-mannheim.de)
  */
