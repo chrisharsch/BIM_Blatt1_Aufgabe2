@@ -15,7 +15,7 @@ import java.util.List;
 public class Bimelim extends DynProJava<Integer> {
 
     public static void main(String[] args) {
-        String[] rowLabels = {"1", "3", "6","9"};
+        String[] rowLabels = {"1", "3","5","6","9"};
         int[] werte = {1,3,5,6,9};
         int gesamtLaenge = 58;
         Bimelim dp = new Bimelim(rowLabels, werte, werte, gesamtLaenge);
@@ -24,6 +24,21 @@ public class Bimelim extends DynProJava<Integer> {
         List<PathEntry<Integer>> solutionJava = dp.solutionAsList(new Idx(dp.n() -1, 0));
         System.out.println("Optimal Decisions:");
         for (PathEntry<Integer> entry : solutionJava) {
+            System.out.print(entry.decision() + " ");
+        }
+        System.out.println("\n");
+        System.out.println(dp.mkMatrixString(dp.solution(new Idx(dp.n() - 1, 0))));
+
+
+        String[] rowLabelsTwo = {"1", "3","9","15"};
+        int[] werteTwo = {1,3,5,9,15};
+        gesamtLaenge = 533;
+        dp = new Bimelim(rowLabelsTwo, werteTwo, werteTwo, gesamtLaenge);
+        // The maximum is expected at the last item (n-1)
+        // with no capacity left (0);
+        List<PathEntry<Integer>> solutionJavaTwo = dp.solutionAsList(new Idx(dp.n() -1, 0));
+        System.out.println("Optimal Decisions:");
+        for (PathEntry<Integer> entry : solutionJavaTwo) {
             System.out.print(entry.decision() + " ");
         }
         System.out.println("\n");
