@@ -22,8 +22,13 @@ public class Bimelim extends DynProJava<Integer> {
         // The maximum is expected at the last item (n-1)
         // with no capacity left (0);
         List<PathEntry<Integer>> solutionJava = dp.solutionAsList(new Idx(dp.n() -1, 0));
-        System.out.println("Optimal Decisions:");
+        System.out.println("Optimal Decisions with length "+gesamtLaenge+":");
+        for (int i = 0; i< rowLabels.length;i++){
+            System.out.print(rowLabels[i]+" ");
+        }
+        System.out.print("\n");
         for (PathEntry<Integer> entry : solutionJava) {
+
             System.out.print(entry.decision() + " ");
         }
         System.out.println("\n");
@@ -37,7 +42,11 @@ public class Bimelim extends DynProJava<Integer> {
         // The maximum is expected at the last item (n-1)
         // with no capacity left (0);
         List<PathEntry<Integer>> solutionJavaTwo = dp.solutionAsList(new Idx(dp.n() -1, 0));
-        System.out.println("Optimal Decisions:");
+        System.out.println("Optimal Decisions with length "+gesamtLaenge+":");
+        for (int i = 0; i< rowLabels.length;i++){
+            System.out.print(rowLabels[i]+" ");
+        }
+        System.out.print("\n");
         for (PathEntry<Integer> entry : solutionJavaTwo) {
             System.out.print(entry.decision() + " ");
         }
